@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    margin:  0 auto;
+}
+header {
+    margin: 40px auto;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+}
+.headerContainer {
+    display: inline-block;
+}
+.headerContainer img {
+    max-width: 240px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.container .leftside, .container .rightside {
+    flex: 1;
+}
+.container .leftside {
+    display: flex;
+    flex-direction: column;
+}
+.leftside .title h1 {
+    font-size: 40px;
+    color: #3a4b5c;
+    margin: 40px 0;
+}
+.leftside .title p{
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #6a708b;
+}
+.leftside input {
+    padding: 10px 2px;
+    margin-bottom: 20px;
+    border: 0;
+    border-bottom: solid 2px rgba(150,163,171,0.63);
+    outline: none;
+    font-size: 14px;
+}
+.leftside input:disabled {
+    opacity: 0.5;
+}
+.leftside button {
+    background-color: #227c9d;
+    padding: 15px 0;
+    color: #fff;
+    border: 0;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.leftside button:hover {
+    opacity: 0.9;
+}
+.leftside button:disabled {
+    opacity: 0.5;
+}
+.container .rightside  {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.container .rightside .grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+.rightside .grid .gridBigItem {
+    display: flex;
+}
+.gridBigItem .gridArrowBefore{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #227c9d;
+    cursor: pointer;
+    margin-left: -35px;
+    transition: 0.2s ease;
+
+}
+.gridBigItem .gridArrowBefore:hover {
+    opacity: 0.8;
+}
+
+@media(max-width:900px){
+    header {
+        padding: 0 20px;
+    }
+    .container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+}
+@media(max-width:600px){
+   .container .rightside .grid  {
+       grid-template-columns: 1fr;
+   }
+}
